@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class UsersController extends Controller
 {
     public function index() {
-        $users = User::all();
+        $users = User::paginate(15);
         return response()->json($users);
     }
 }
